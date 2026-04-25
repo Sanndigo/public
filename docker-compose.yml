@@ -6,7 +6,7 @@ services:
     container_name: 3dforma-web
     restart: unless-stopped
     ports:
-      - "5678:80"
+      - "80:80"
     volumes:
       # Точка со слешем (./) означает "текущая папка". 
       # Portainer сам смонтирует все HTML-файлы из репозитория в Nginx.
