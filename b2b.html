@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>3DForma Pro - Личный кабинет клиента</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-fixed": "#ffdbcc",
+                      "inverse-surface": "#e5e2e3",
+                      "on-surface-variant": "#e2bfb0",
+                      "secondary-fixed-dim": "#adc6ff",
+                      "inverse-on-surface": "#303031",
+                      "primary-container": "#ff6b00",
+                      "on-error-container": "#ffdad6",
+                      "on-primary-fixed": "#351000",
+                      "on-primary-container": "#572000",
+                      "on-surface": "#e5e2e3",
+                      "surface": "#131314",
+                      "on-tertiary-container": "#2f3132",
+                      "on-tertiary-fixed": "#1a1c1c",
+                      "on-primary": "#561f00",
+                      "surface-container-highest": "#353436",
+                      "tertiary-fixed": "#e2e2e2",
+                      "error-container": "#93000a",
+                      "on-background": "#e5e2e3",
+                      "on-tertiary-fixed-variant": "#454747",
+                      "on-secondary-fixed-variant": "#004493",
+                      "tertiary-container": "#989999",
+                      "tertiary": "#c6c6c7",
+                      "outline-variant": "#5a4136",
+                      "surface-tint": "#ffb693",
+                      "surface-dim": "#131314",
+                      "surface-variant": "#353436",
+                      "outline": "#a98a7d",
+                      "error": "#ffb4ab",
+                      "inverse-primary": "#a04100",
+                      "primary": "#ffb693",
+                      "on-error": "#690005",
+                      "surface-container": "#1f1f20",
+                      "surface-container-low": "#1b1b1c",
+                      "on-secondary-container": "#00285c",
+                      "surface-bright": "#39393a",
+                      "primary-fixed-dim": "#ffb693",
+                      "on-primary-fixed-variant": "#7a3000",
+                      "surface-container-lowest": "#0e0e0f",
+                      "secondary": "#adc6ff",
+                      "surface-container-high": "#2a2a2b",
+                      "on-secondary": "#002e69",
+                      "secondary-fixed": "#d8e2ff",
+                      "secondary-container": "#4b8eff",
+                      "tertiary-fixed-dim": "#c6c6c7",
+                      "on-secondary-fixed": "#001a41",
+                      "background": "#131314",
+                      "on-tertiary": "#2f3131"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "unit": "4px",
+                      "stack-lg": "32px",
+                      "gutter": "24px",
+                      "stack-sm": "8px",
+                      "grid-columns": "12",
+                      "margin-page": "48px",
+                      "stack-md": "16px"
+              },
+              "fontFamily": {
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "label-mono": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Space Grotesk"
+                      ],
+                      "display-xl": [
+                              "Space Grotesk"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "technical-data": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Space Grotesk"
+                      ]
+              },
+              "fontSize": {
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-mono": [
+                              "12px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-xl": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "technical-data": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .bg-grid-pattern {
+            background-image: linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        .glass-panel {
+            background-color: rgba(53, 52, 54, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glow-hover:hover {
+            box-shadow: 0 0 8px #adc6ff;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen bg-grid-pattern flex flex-col font-body-md">
+<!-- TopAppBar -->
+<header class="bg-zinc-950/70 backdrop-blur-xl docked full-width top-0 border-b border-white/10 shadow-[0_0_15px_rgba(0,0,0,0.5)] sticky top-0 w-full z-50 flex justify-between items-center px-12 py-4 max-w-[1440px] mx-auto">
+<div class="text-xl font-bold tracking-tighter text-white font-['Space_Grotesk']">
+            3DForma Pro
+        </div>
+<nav class="hidden md:flex gap-8">
+<a class="text-zinc-400 font-['Space_Grotesk'] font-medium tracking-tight hover:text-orange-500 transition-colors duration-200 active:scale-95 transform transition-all" href="main.html">Главная</a>
+<a class="text-zinc-400 font-['Space_Grotesk'] font-medium tracking-tight hover:text-orange-500 transition-colors duration-200 active:scale-95 transform transition-all" href="services.html">Услуги</a>
+<a class="text-orange-500 border-b-2 border-orange-500 pb-1 font-['Space_Grotesk'] font-medium tracking-tight hover:text-orange-500 transition-colors duration-200 active:scale-95 transform transition-all" href="b2b.html">B2B Портал</a>
+<a class="text-zinc-400 font-['Space_Grotesk'] font-medium tracking-tight hover:text-orange-500 transition-colors duration-200 active:scale-95 transform transition-all" href="about_us.html">О нас</a>
+</nav>
+<button class="bg-primary-container text-white font-body-md px-6 py-2 rounded font-medium hover:bg-orange-500 transition-colors active:scale-95">
+            Рассчитать проект
+        </button>
+</header>
+<!-- Main Content -->
+<main class="flex-grow w-full max-w-[1440px] mx-auto px-12 py-margin-page flex flex-col gap-stack-lg">
+<!-- Dashboard Header -->
+<div class="flex justify-between items-end border-b border-white/10 pb-stack-sm">
+<div>
+<h1 class="font-display-xl text-display-xl text-on-surface">Личный кабинет</h1>
+<p class="font-body-md text-body-md text-tertiary mt-2">Управление инженерными проектами, загрузками и расчетами.</p>
+</div>
+<div class="flex gap-4">
+<button class="border border-secondary text-secondary font-body-md px-4 py-2 rounded hover:bg-secondary/10 transition-colors glow-hover">
+<span class="material-symbols-outlined align-middle mr-2" style="font-size: 18px;">settings</span>Settings
+                </button>
+</div>
+</div>
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Left Column: Upload & Materials -->
+<div class="col-span-12 lg:col-span-4 flex flex-col gap-gutter">
+<!-- CAD Upload Zone -->
+<section class="glass-panel rounded-lg p-stack-md flex flex-col gap-stack-sm">
+<div class="flex items-center gap-2 border-b border-white/10 pb-2 mb-2">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">upload_file</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Загрузка CAD</h2>
+</div>
+<div class="border-2 border-dashed border-outline-variant rounded-lg p-8 flex flex-col items-center justify-center text-center bg-surface-container-low hover:border-secondary hover:shadow-[0_0_8px_#adc6ff] transition-all cursor-pointer">
+<span class="material-symbols-outlined text-tertiary text-4xl mb-4">cloud_upload</span>
+<p class="font-body-md text-body-md text-on-surface mb-2">Перетащите файлы CAD сюда</p>
+<p class="font-technical-data text-technical-data text-tertiary mb-4">Поддерживаемые форматы: .STL, .OBJ, .STEP (Макс 500MB)</p>
+<button class="bg-primary-container text-white font-body-md px-4 py-2 rounded hover:bg-orange-500 transition-colors">Выбрать файлы</button>
+</div>
+</section>
+<!-- Material Stats -->
+<section class="glass-panel rounded-lg p-stack-md flex flex-col gap-stack-sm">
+<div class="flex items-center gap-2 border-b border-white/10 pb-2 mb-2">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Статистика материалов</h2>
+</div>
+<div class="flex flex-col gap-4">
+<!-- Material Item -->
+<div class="bg-surface-container-low p-3 rounded flex justify-between items-center border border-white/5">
+<div>
+<div class="font-technical-data text-technical-data text-on-surface">Onyx (Carbon Fiber)</div>
+<div class="font-label-mono text-label-mono text-tertiary mt-1">INDUSTRIAL GRADE</div>
+</div>
+<div class="text-right">
+<div class="font-body-md text-body-md text-secondary">В наличии</div>
+<div class="w-24 h-1 bg-surface-highest mt-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full" style="width: 85%;"></div>
+</div>
+</div>
+</div>
+<!-- Material Item -->
+<div class="bg-surface-container-low p-3 rounded flex justify-between items-center border border-white/5">
+<div>
+<div class="font-technical-data text-technical-data text-on-surface">Titanium Ti6Al4V</div>
+<div class="font-label-mono text-label-mono text-tertiary mt-1">AEROSPACE</div>
+</div>
+<div class="text-right">
+<div class="font-body-md text-body-md text-primary">Мало на складе</div>
+<div class="w-24 h-1 bg-surface-highest mt-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full" style="width: 20%;"></div>
+</div>
+</div>
+</div>
+<!-- Material Item -->
+<div class="bg-surface-container-low p-3 rounded flex justify-between items-center border border-white/5">
+<div>
+<div class="font-technical-data text-technical-data text-on-surface">PA12 Nylon</div>
+<div class="font-label-mono text-label-mono text-tertiary mt-1">VERSATILE</div>
+</div>
+<div class="text-right">
+<div class="font-body-md text-body-md text-secondary">Среднее количество</div>
+<div class="w-24 h-1 bg-surface-highest mt-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full" style="width: 55%;"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Tracking & Quotes -->
+<div class="col-span-12 lg:col-span-8 flex flex-col gap-gutter">
+<!-- Project Tracking -->
+<section class="glass-panel rounded-lg p-stack-md flex flex-col gap-stack-sm flex-grow">
+<div class="flex items-center justify-between border-b border-white/10 pb-2 mb-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">precision_manufacturing</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Отслеживание проектов</h2>
+</div>
+<button class="text-secondary font-technical-data text-technical-data hover:text-white transition-colors">View All Orders</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Tracking Card 1 -->
+<div class="bg-surface-container-low border border-white/5 rounded p-4 hover:bg-surface-container transition-colors cursor-pointer group">
+<div class="flex justify-between items-start mb-4">
+<div>
+<div class="font-label-mono text-label-mono text-secondary mb-1">PRJ-8920-A</div>
+<div class="font-body-md text-body-md text-on-surface font-semibold">Drone Chassis Mk IV</div>
+</div>
+<span class="border border-secondary text-secondary font-label-mono text-label-mono px-2 py-1 rounded text-[10px]">PRINTING</span>
+</div>
+<div class="relative w-full h-32 mb-4 bg-surface rounded overflow-hidden border border-white/10">
+<img alt="3D printer creating a complex geometric lattice structure in dark industrial setting with blue laser highlights" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity" data-alt="3D printer creating a complex geometric lattice structure in dark industrial setting with blue laser highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEzBelv6NaWwEBejZe9cJ0Yp5IOtc2pxzkZ8sjJizCVnLdObSMlo8_rQOZGSr4rC3jU8s7qkPCYX_KANs4mmuFYK-9k8Ghyq0uJPWj3o8zV57mTrtS2wNEHeGm1Btz6QfQbcZkClW4ciK6HlEDnNLAdLWExaqskm5tqags7M7ZcNMTbGSEsdHwdPb3ZvI-gJIAg9rYXzHucYlOUaNd6ANr9IVAzvIa21Z2gxcMzoDNBT3a_Z5Utkl5PQNWPgGV3ZPihgw55Q9ZrYg"/>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="font-technical-data text-technical-data text-tertiary">Ожид. завершение</span>
+<span class="font-technical-data text-technical-data text-on-surface">14:30 EST, Сегодня</span>
+</div>
+<div class="w-full h-1 bg-surface-highest mt-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full" style="width: 65%;"></div>
+</div>
+</div>
+<!-- Tracking Card 2 -->
+<div class="bg-surface-container-low border border-white/5 rounded p-4 hover:bg-surface-container transition-colors cursor-pointer group">
+<div class="flex justify-between items-start mb-4">
+<div>
+<div class="font-label-mono text-label-mono text-tertiary mb-1">PRJ-8919-B</div>
+<div class="font-body-md text-body-md text-on-surface font-semibold">Manifold Assembly</div>
+</div>
+<span class="border border-outline text-tertiary font-label-mono text-label-mono px-2 py-1 rounded text-[10px]">QUALITY CHECK</span>
+</div>
+<div class="relative w-full h-32 mb-4 bg-surface rounded overflow-hidden border border-white/10">
+<div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1581092335397-9583eb92d232?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80')] bg-cover bg-center opacity-40 group-hover:opacity-60 transition-opacity" data-alt="Technical blueprint schematic overlaid on dark grey industrial background with subtle grid lines"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-tertiary">fact_check</span>
+</div>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="font-technical-data text-technical-data text-tertiary">Статус</span>
+<span class="font-technical-data text-technical-data text-on-surface">Ожидает проверки</span>
+</div>
+<div class="w-full h-1 bg-surface-highest mt-2 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full" style="width: 90%;"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Recent Quotes -->
+<section class="glass-panel rounded-lg p-stack-md flex flex-col gap-stack-sm">
+<div class="flex items-center gap-2 border-b border-white/10 pb-2 mb-2">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">request_quote</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Последние расчеты</h2>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-white/10">
+<th class="py-2 px-4 font-label-mono text-label-mono text-tertiary font-normal">ID РАСЧЕТА</th>
+<th class="py-2 px-4 font-label-mono text-label-mono text-tertiary font-normal">НАЗВАНИЕ ПРОЕКТА</th>
+<th class="py-2 px-4 font-label-mono text-label-mono text-tertiary font-normal">МАТЕРИАЛ</th>
+<th class="py-2 px-4 font-label-mono text-label-mono text-tertiary font-normal text-right">ИТОГО</th>
+<th class="py-2 px-4 font-label-mono text-label-mono text-tertiary font-normal text-center">ДЕЙСТВИЕ</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b border-white/5 hover:bg-surface-container-low transition-colors">
+<td class="py-3 px-4 font-technical-data text-technical-data text-on-surface">QT-1042</td>
+<td class="py-3 px-4 font-body-md text-body-md text-on-surface">Gear Housing Prototype</td>
+<td class="py-3 px-4 font-technical-data text-technical-data text-tertiary">Aluminum AlSi10Mg</td>
+<td class="py-3 px-4 font-technical-data text-technical-data text-on-surface text-right">$1,240.00</td>
+<td class="py-3 px-4 text-center">
+<button class="bg-primary-container text-white font-technical-data text-technical-data px-3 py-1 rounded text-sm hover:bg-orange-500 transition-colors">Одобрить</button>
+</td>
+</tr>
+<tr class="border-b border-white/5 hover:bg-surface-container-low transition-colors">
+<td class="py-3 px-4 font-technical-data text-technical-data text-on-surface">QT-1041</td>
+<td class="py-3 px-4 font-body-md text-body-md text-on-surface">Sensor Bracket Batch</td>
+<td class="py-3 px-4 font-technical-data text-technical-data text-tertiary">PA12 Nylon</td>
+<td class="py-3 px-4 font-technical-data text-technical-data text-on-surface text-right">$450.50</td>
+<td class="py-3 px-4 text-center">
+<button class="border border-secondary text-secondary font-technical-data text-technical-data px-3 py-1 rounded text-sm hover:bg-secondary/10 transition-colors">Обзор</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-zinc-950 full-width border-t border-white/5 border-t border-white/10 flat no shadows w-full py-12 px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-[1440px] mx-auto mt-auto">
+<div class="col-span-1 md:col-span-2 lg:col-span-1">
+<div class="text-lg font-bold text-white opacity-50 font-['Space_Grotesk'] text-xs uppercase tracking-widest mb-4">
+                3DForma Pro
+            </div>
+<p class="font-['Space_Grotesk'] text-xs uppercase tracking-widest text-zinc-500">
+                © 2024 3DForma Pro. Engineering Excellence.
+            </p>
+</div>
+<div class="flex flex-col gap-2">
+<a class="font-['Space_Grotesk'] text-xs uppercase tracking-widest text-zinc-500 hover:text-orange-500 hover:glow-sm transition-all opacity-80 hover:opacity-100" href="#">North America Contact</a>
+<a class="font-['Space_Grotesk'] text-xs uppercase tracking-widest text-zinc-500 hover:text-orange-500 hover:glow-sm transition-all opacity-80 hover:opacity-100" href="#">EMEA Support</a>
+</div>
+<div class="flex flex-col gap-2">
+<a class="font-['Space_Grotesk'] text-xs uppercase tracking-widest text-zinc-500 hover:text-orange-500 hover:glow-sm transition-all opacity-80 hover:opacity-100" href="#">APAC Logistics</a>
+</div>
+<div class="flex flex-col gap-2">
+<a class="font-['Space_Grotesk'] text-xs uppercase tracking-widest text-zinc-500 hover:text-orange-500 hover:glow-sm transition-all opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="font-['Space_Grotesk'] text-xs uppercase tracking-widest text-zinc-500 hover:text-orange-500 hover:glow-sm transition-all opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>3DForma Pro - Инженерия будущего</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-fixed": "#ffdbcc",
+                      "inverse-surface": "#e5e2e3",
+                      "on-surface-variant": "#e2bfb0",
+                      "secondary-fixed-dim": "#adc6ff",
+                      "inverse-on-surface": "#303031",
+                      "primary-container": "#ff6b00",
+                      "on-error-container": "#ffdad6",
+                      "on-primary-fixed": "#351000",
+                      "on-primary-container": "#ffffff",
+                      "on-surface": "#e5e2e3",
+                      "surface": "#131314",
+                      "on-tertiary-container": "#2f3132",
+                      "on-tertiary-fixed": "#1a1c1c",
+                      "on-primary": "#561f00",
+                      "surface-container-highest": "#353436",
+                      "tertiary-fixed": "#e2e2e2",
+                      "error-container": "#93000a",
+                      "on-background": "#e5e2e3",
+                      "on-tertiary-fixed-variant": "#454747",
+                      "on-secondary-fixed-variant": "#004493",
+                      "tertiary-container": "#989999",
+                      "tertiary": "#c6c6c7",
+                      "outline-variant": "#5a4136",
+                      "surface-tint": "#ffb693",
+                      "surface-dim": "#131314",
+                      "surface-variant": "#353436",
+                      "outline": "#a98a7d",
+                      "error": "#ffb4ab",
+                      "inverse-primary": "#a04100",
+                      "primary": "#ffb693",
+                      "on-error": "#690005",
+                      "surface-container": "#1f1f20",
+                      "surface-container-low": "#1b1b1c",
+                      "on-secondary-container": "#00285c",
+                      "surface-bright": "#39393a",
+                      "primary-fixed-dim": "#ffb693",
+                      "on-primary-fixed-variant": "#7a3000",
+                      "surface-container-lowest": "#0e0e0f",
+                      "secondary": "#adc6ff",
+                      "surface-container-high": "#2a2a2b",
+                      "on-secondary": "#002e69",
+                      "secondary-fixed": "#d8e2ff",
+                      "secondary-container": "#4b8eff",
+                      "tertiary-fixed-dim": "#c6c6c7",
+                      "on-secondary-fixed": "#001a41",
+                      "background": "#131314",
+                      "on-tertiary": "#2f3131"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "unit": "4px",
+                      "stack-lg": "32px",
+                      "gutter": "24px",
+                      "stack-sm": "8px",
+                      "grid-columns": "12",
+                      "margin-page": "48px",
+                      "stack-md": "16px"
+              },
+              "fontFamily": {
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "label-mono": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Space Grotesk"
+                      ],
+                      "display-xl": [
+                              "Space Grotesk"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "technical-data": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Space Grotesk"
+                      ]
+              },
+              "fontSize": {
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-mono": [
+                              "12px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-xl": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "technical-data": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "500"
+                              }
+                      }
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .blueprint-bg {
+            background-color: #0F0F10;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .glow-hover:hover {
+            box-shadow: 0 0 8px #adc6ff;
+        }
+    </style>
+</head>
+<body class="bg-background text-white font-body-lg text-body-lg min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-zinc-950/70 backdrop-blur-xl border-b border-white/10 shadow-[0_0_15px_rgba(0,0,0,0.5)] sticky top-0 w-full z-50">
+<div class="flex justify-between items-center px-12 py-4 max-w-[1440px] mx-auto">
+<div class="font-['Space_Grotesk'] font-medium tracking-tight text-xl font-bold tracking-tighter text-white">
+                3DForma Pro
+            </div>
+<nav class="hidden md:flex gap-8 items-center font-['Space_Grotesk'] font-medium tracking-tight">
+<a class="text-orange-500 border-b-2 border-orange-500 pb-1 hover:text-orange-500 transition-colors duration-200 active:scale-95 transform transition-all" href="main.html">Главная</a>
+<a class="text-zinc-400 hover:text-orange-500 transition-colors duration-200 active:scale-95 transform transition-all" href="services.html">Услуги</a>
+<a class="text-zinc-400 hover:text-orange-500 transition-colors duration-200 active:scale-95 transform transition-all" href="b2b.html">B2B Портал</a>
+<a class="text-zinc-400 hover:text-orange-500 transition-colors duration-200 active:scale-95 transform transition-all" href="about_us.html">О нас</a>
+</nav>
+<button class="bg-primary-container text-white px-6 py-2 rounded font-label-mono text-label-mono hover:bg-orange-500 transition-colors">
+                Рассчитать проект
+            </button>
+</div>
+</header>
+<main class="flex-grow">
+<!-- Hero Section -->
+<section class="blueprint-bg py-24 px-12 relative overflow-hidden border-b border-white/10">
+<div class="max-w-[1440px] mx-auto relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div class="space-y-stack-lg bg-surface-container/30 backdrop-blur-sm p-8 rounded-xl border border-white/5">
+<h1 class="font-display-xl text-display-xl text-white">
+                        Инженерия будущего для <br/>
+<span class="text-orange-500">промышленности Пскова</span>
+</h1>
+<p class="font-body-lg text-body-lg text-zinc-300 max-w-2xl">
+                        Критическое импортозамещение, композитная 3D-печать (Nylon-CF, ABS-CF) и безопасные встроенные системы на Rust.
+                    </p>
+<div class="flex gap-4">
+<button class="bg-primary-container text-white px-8 py-3 rounded font-label-mono text-label-mono hover:bg-orange-500 transition-colors">
+                            Изучить услуги
+                        </button>
+<button class="border border-blue-400 text-blue-400 px-8 py-3 rounded font-label-mono text-label-mono glow-hover transition-all bg-surface-container/50 hover:bg-surface-container">
+                            Смотреть кейсы
+                        </button>
+</div>
+</div>
+<div class="relative h-[400px] w-full rounded-xl border border-white/10 bg-surface-container/50 backdrop-blur-md p-4 flex items-center justify-center">
+<img alt="Technical 3D printing composite materials in a high-tech lab environment" class="w-full h-full object-cover rounded-lg opacity-80 mix-blend-luminosity" data-alt="Close up of an industrial 3D printer extruding dark carbon fiber composite material in a clean high-tech laboratory with dramatic blue and orange lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIvW65hQurPlKtpbp1vXPfA-0QiGnUvPQ1ufykfH8AohOoqSv752s0kZ0Z8WvARJpljAAiCxy7dzztnQBxnkgfsGbDIo0AU9QhNNK93hyfUUaqTl3v1M4Ky7tCFjXGWKzW28Hk5_hSFZLHXDD5mWC6a4TscfxAn6WH6_zDhHaYDMD1CG0Zm7ul0Q5IuezwfkxH8FNISk6CQZ08EwUl3qV_3X-arLIISZfxJuhfuMYEU66Irxw2qB_hUEZL_gCrZ0pLtSLREj1M3XE"/>
+</div>
+</div>
+</section>
+<!-- Service Cards (Bento Grid Style) -->
+<section class="blueprint-bg py-24 px-12 relative overflow-hidden">
+<div class="max-w-[1440px] mx-auto relative z-10">
+<div class="mb-12 bg-surface-container/30 backdrop-blur-sm p-6 rounded-xl border border-white/5 inline-block">
+<h2 class="font-headline-lg text-headline-lg text-white border-l-4 border-orange-500 pl-4">Наши компетенции</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Card 1 -->
+<div class="bg-surface-container/70 backdrop-blur-md rounded-xl border border-white/10 p-6 flex flex-col gap-4 hover:border-blue-400 transition-colors glow-hover group relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-primary-container/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="flex items-center justify-between border-b border-white/10 pb-4">
+<h3 class="font-headline-md text-headline-md text-white">Композитное производство</h3>
+<span class="material-symbols-outlined text-orange-500 text-3xl" data-icon="precision_manufacturing">precision_manufacturing</span>
+</div>
+<p class="font-body-md text-body-md text-zinc-300 flex-grow">
+                        Промышленная 3D-печать с использованием высокопрочных композитов, таких как Nylon-CF и ABS-CF, для критически важных компонентов.
+                    </p>
+<div class="flex gap-2 mt-4">
+<span class="border border-blue-400 text-blue-400 px-2 py-1 rounded font-label-mono text-label-mono text-[10px] bg-blue-400/10">NYLON-CF</span>
+<span class="border border-blue-400 text-blue-400 px-2 py-1 rounded font-label-mono text-label-mono text-[10px] bg-blue-400/10">ABS-CF</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container/70 backdrop-blur-md rounded-xl border border-white/10 p-6 flex flex-col gap-4 hover:border-blue-400 transition-colors glow-hover group relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-secondary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="flex items-center justify-between border-b border-white/10 pb-4">
+<h3 class="font-headline-md text-headline-md text-white">Разработка встроенных систем</h3>
+<span class="material-symbols-outlined text-blue-400 text-3xl" data-icon="memory">memory</span>
+</div>
+<p class="font-body-md text-body-md text-zinc-300 flex-grow">
+                        Разработка безопасного встроенного программного обеспечения с фокусом на экосистему Rust и аппаратную архитектуру ESP32.
+                    </p>
+<div class="flex gap-2 mt-4">
+<span class="border border-blue-400 text-blue-400 px-2 py-1 rounded font-label-mono text-label-mono text-[10px] bg-blue-400/10">RUST</span>
+<span class="border border-blue-400 text-blue-400 px-2 py-1 rounded font-label-mono text-label-mono text-[10px] bg-blue-400/10">ESP32</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container/70 backdrop-blur-md rounded-xl border border-white/10 p-6 flex flex-col gap-4 hover:border-blue-400 transition-colors glow-hover group relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-primary-container/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="flex items-center justify-between border-b border-white/10 pb-4">
+<h3 class="font-headline-md text-headline-md text-white">Обратное проектирование</h3>
+<span class="material-symbols-outlined text-orange-500 text-3xl" data-icon="settings_b_roll">settings_b_roll</span>
+</div>
+<p class="font-body-md text-body-md text-zinc-300 flex-grow">
+                        Преобразование сломанных или устаревших физических деталей в высокоточные параметрические 3D CAD модели для повторного производства.
+                    </p>
+<div class="flex gap-2 mt-4">
+<span class="border border-blue-400 text-blue-400 px-2 py-1 rounded font-label-mono text-label-mono text-[10px] bg-blue-400/10">SCANNING</span>
+<span class="border border-blue-400 text-blue-400 px-2 py-1 rounded font-label-mono text-label-mono text-[10px] bg-blue-400/10">CAD</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-zinc-950 full-width border-t border-white/5 font-['Space_Grotesk'] text-xs uppercase tracking-widest text-orange-600">
+<div class="w-full py-12 px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-[1440px] mx-auto">
+<div>
+<div class="text-lg font-bold text-white opacity-50 mb-4">3DForma Pro</div>
+<p class="text-zinc-500 normal-case tracking-normal">© 2024 3DForma Pro. Engineering Excellence.</p>
+</div>
+<div class="flex flex-col gap-4">
+<a class="text-zinc-500 hover:text-orange-500 hover:glow-sm transition-all opacity-80 hover:opacity-100" href="#">North America Contact</a>
+<a class="text-zinc-500 hover:text-orange-500 hover:glow-sm transition-all opacity-80 hover:opacity-100" href="#">EMEA Support</a>
+<a class="text-zinc-500 hover:text-orange-500 hover:glow-sm transition-all opacity-80 hover:opacity-100" href="#">APAC Logistics</a>
+</div>
+<div class="flex flex-col gap-4">
+<a class="text-zinc-500 hover:text-orange-500 hover:glow-sm transition-all opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="text-zinc-500 hover:text-orange-500 hover:glow-sm transition-all opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-zinc-500 text-2xl hover:text-orange-500 cursor-pointer transition-colors" data-icon="language">language</span>
+<span class="text-zinc-500">Global Operations</span>
+</div>
+</div>
+</footer>
+</body></html>
